@@ -22,13 +22,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         var boxTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: Selector("createBox"), userInfo: nil, repeats: true)
-        
         createCircle()
         createBar()
         setPhysics()
         physicsWorld.contactDelegate = self
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-
+        
     }
     
     // MARK: - Functions
@@ -44,7 +43,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //print("direita")
             nodeA.physicsBody?.applyImpulse(CGVector(dx: randomX, dy: randomY))
             //print(randomX)
- 
+            
             
         } else if nodeB.name == "box" {
             let randomX = Int.random(in: -30...30)
@@ -54,15 +53,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //print(randomX)
             
         }
-       //tentativa de fazer as caixas sumirem do programa qunado passam pelo chao
+        //tentativa de fazer as caixas sumirem do programa qunado passam pelo chao
         if (contact.bodyA.categoryBitMask == 00000010) && (contact.bodyB.categoryBitMask == 00000011) {
-            contact.bodyA.node?.removeFromParent()
-        }
-        
-        if(box.position.y < circle.position.y) {
-            print("Caixa \(box.position.y)")
-            print("Circle \(circle.position.y)")
-
             box.removeFromParent()
         }
         
@@ -145,7 +137,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func touchMoved(toPoint pos : CGPoint) {
         bar.position.x = pos.x
         //bar.position.y = pos.y
-        
     }
     
     func touchUp(atPoint pos : CGPoint) {
