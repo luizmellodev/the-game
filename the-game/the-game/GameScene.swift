@@ -14,7 +14,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var circle: SKShapeNode = SKShapeNode()
     private var bar: SKSpriteNode = SKSpriteNode()
-    private var squares: SKShapeNode = SKShapeNode()
     private var box: SKShapeNode = SKShapeNode()
     
     
@@ -38,25 +37,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         guard let nodeB = contact.bodyB.node else {return}
         
         if nodeA.name == "box" {
-            let randomX = Int.random(in: -30...30)
-            let randomY = Int.random(in: 10..<25)
-            //print("direita")
-            nodeA.physicsBody?.applyImpulse(CGVector(dx: randomX, dy: randomY))
-            //print(randomX)
+            if nodeA.position.x < 0 {
+                let randomX = Int.random(in: 0...30)
+                let randomY = Int.random(in: 10..<25)
+                nodeA.physicsBody?.applyImpulse(CGVector(dx: randomX, dy: randomY))
+            }
+            else {
+                let randomX = Int.random(in: -30...0)
+                let randomY = Int.random(in: 10..<25)
+                nodeA.physicsBody?.applyImpulse(CGVector(dx: randomX, dy: randomY))
+            }
+            
             
             
         } else if nodeB.name == "box" {
-            let randomX = Int.random(in: -30...30)
-            let randomY = Int.random(in: 10..<25)
-            //print("esquerda")
-            nodeB.physicsBody?.applyImpulse(CGVector(dx: randomX, dy: randomY))
-            //print(randomX)
-            
+            if nodeB.position.x < 0 {
+                let randomX = Int.random(in: 30...100)
+                let randomY = Int.random(in: 50..<100)
+                nodeB.physicsBody?.applyImpulse(CGVector(dx: randomX, dy: randomY))
+            }
+            else {
+                let randomX = Int.random(in: -100...(-30))
+                let randomY = Int.random(in: 50..<100)
+                nodeB.physicsBody?.applyImpulse(CGVector(dx: randomX, dy: randomY))
+            }
         }
-        //tentativa de fazer as caixas sumirem do programa qunado passam pelo chao
-        if (contact.bodyA.categoryBitMask == 00000010) && (contact.bodyB.categoryBitMask == 00000011) {
-            box.removeFromParent()
-        }
+        
         
     }
     
@@ -70,20 +76,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         barPhysicsBody.collisionBitMask = 00000011
         barPhysicsBody.contactTestBitMask = 00000011
         bar.physicsBody = barPhysicsBody
-        
-        
-        let floor = SKSpriteNode(color: .blue, size: CGSize(width: UIScreen.main.bounds.size.width * 4, height: 20))
-        floor.position = CGPoint(x: 0, y: -((self.scene?.size.height)! / 2))
-        
-        let floorPhysicsBody = SKPhysicsBody(rectangleOf: CGSize(width: UIScreen.main.bounds.size.width * 4, height: 20))
-        floorPhysicsBody.isDynamic = false
-        floorPhysicsBody.affectedByGravity = false
-        floorPhysicsBody.categoryBitMask = 00000010
-        floorPhysicsBody.collisionBitMask = 00000001
-        floorPhysicsBody.contactTestBitMask = 00000011
-        floor.physicsBody = floorPhysicsBody
-        
-        addChild(floor)
     }
     
     func createCircle() {
@@ -104,7 +96,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     @objc func createBox() {
-        box = SKShapeNode(rectOf: CGSize(width: 50, height: 50))
+        let box = SKShapeNode(rectOf: CGSize(width: 50, height: 50))
+        
         //posicao random das caixas
         let randomNumber = arc4random_uniform(2)
         let x: CGFloat = randomNumber == 0 ? 1 : -1
@@ -163,7 +156,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MARK: - Update
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+        guard let scene = scene else {return}
+        scene.enumerateChildNodes(withName: "box", using: { node, _ in
+            let positionVector = CGPoint(x: 0.0 - node.position.x, y: -320 - node.position.y)
+            node.physicsBody?.applyForce(CGVector(dx: positionVector.x, dy: positionVector.y))
+            if node.position.y < -(scene.frame.height)/2 {
+                node.removeFromParent()
+            }
+        })
     }
     
 }
