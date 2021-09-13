@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380A970526EFE14900C9E965 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A970426EFE14900C9E965 /* GameOverScene.swift */; };
 		38E2CCF626EA7F020097D484 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2CCF526EA7F020097D484 /* AppDelegate.swift */; };
 		38E2CCFC26EA7F020097D484 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2CCFB26EA7F020097D484 /* GameScene.swift */; };
 		38E2CCFE26EA7F020097D484 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2CCFD26EA7F020097D484 /* GameViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		380A970426EFE14900C9E965 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		38E2CCF226EA7F020097D484 /* the-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "the-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E2CCF526EA7F020097D484 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38E2CCFB26EA7F020097D484 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				38E2CCF526EA7F020097D484 /* AppDelegate.swift */,
 				38E2CCFB26EA7F020097D484 /* GameScene.swift */,
+				380A970426EFE14900C9E965 /* GameOverScene.swift */,
 				38E2CCFD26EA7F020097D484 /* GameViewController.swift */,
 				38E2CD2626EA85820097D484 /* StartGameScene.swift */,
 				38E2CCFF26EA7F020097D484 /* Main.storyboard */,
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				380A970526EFE14900C9E965 /* GameOverScene.swift in Sources */,
 				38E2CCFC26EA7F020097D484 /* GameScene.swift in Sources */,
 				38E2CD2726EA85820097D484 /* StartGameScene.swift in Sources */,
 				38E2CCFE26EA7F020097D484 /* GameViewController.swift in Sources */,
