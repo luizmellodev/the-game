@@ -3,6 +3,18 @@
 
 This is the repository of a rather difficult game created in Swift.
 
+# Content
+- [Screenshots](#screenshots)
+- [Badges](#badges)
+- [Run Locally](#run-locally)
+- [Acknowledgements](#acknowledgements)
+- [Authors](#authors)
+- [License](#license)
+- [Feedback](#feedback)
+
+
+
+
 ## Screenshots
 Calm down!! This is a screenshot of the game's beta.
 <br/><br/>
