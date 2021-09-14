@@ -16,10 +16,14 @@ This is the repository of a rather difficult game created in Swift.
 
 
 ## Screenshots
-Calm down!! This is a screenshot of the game's beta.
+Calm down!! The game is still being developed. =)
+<!--- 
 <br/><br/>
 
 <img alt="game screenshot" src="https://i.imgur.com/0OztvEx.jpg" width="300" height="700"/>
+
+-->
+
 
 - [Screenshots](#screenshots)
 - [Badges](#badges)
