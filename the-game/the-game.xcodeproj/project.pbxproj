@@ -3,14 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		380A970526EFE14900C9E965 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A970426EFE14900C9E965 /* GameOverScene.swift */; };
-		380A970626F033CD00C9E965 /* Pods_the_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120F003BA67FE00ADEEC6010 /* Pods_the_game.framework */; };
-		380A970D26F03A2000C9E965 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 380A970C26F03A2000C9E965 /* Lottie */; };
-		380A970F26F03BEF00C9E965 /* animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 380A970E26F03BEF00C9E965 /* animation.json */; };
 		38E2CCF626EA7F020097D484 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2CCF526EA7F020097D484 /* AppDelegate.swift */; };
 		38E2CCFC26EA7F020097D484 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2CCFB26EA7F020097D484 /* GameScene.swift */; };
 		38E2CCFE26EA7F020097D484 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2CCFD26EA7F020097D484 /* GameViewController.swift */; };
@@ -39,11 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0028ED3A75B6800BA0DEB418 /* Pods-the-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-the-game.debug.xcconfig"; path = "Target Support Files/Pods-the-game/Pods-the-game.debug.xcconfig"; sourceTree = "<group>"; };
-		120F003BA67FE00ADEEC6010 /* Pods_the_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_the_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		380A970426EFE14900C9E965 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
-		380A970E26F03BEF00C9E965 /* animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation.json; sourceTree = "<group>"; };
-		385047D0050485745ADDE62A /* Pods-the-gameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-the-gameTests.debug.xcconfig"; path = "Target Support Files/Pods-the-gameTests/Pods-the-gameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		38E2CCF226EA7F020097D484 /* the-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "the-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E2CCF526EA7F020097D484 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38E2CCFB26EA7F020097D484 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -58,10 +51,6 @@
 		38E2CD1826EA7F050097D484 /* the_gameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = the_gameUITests.swift; sourceTree = "<group>"; };
 		38E2CD1A26EA7F050097D484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38E2CD2626EA85820097D484 /* StartGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameScene.swift; sourceTree = "<group>"; };
-		4A9FA3B206D4DA21D16058AA /* Pods-the-game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-the-game.release.xcconfig"; path = "Target Support Files/Pods-the-game/Pods-the-game.release.xcconfig"; sourceTree = "<group>"; };
-		875B57BEABA5E75E8980C9FB /* Pods-the-gameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-the-gameTests.release.xcconfig"; path = "Target Support Files/Pods-the-gameTests/Pods-the-gameTests.release.xcconfig"; sourceTree = "<group>"; };
-		D5E1FFCEEE22FAFE8FCE55FD /* Pods-the-game-the-gameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-the-game-the-gameUITests.debug.xcconfig"; path = "Target Support Files/Pods-the-game-the-gameUITests/Pods-the-game-the-gameUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D62E64D21AB33949EF0AC104 /* Pods-the-game-the-gameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-the-game-the-gameUITests.release.xcconfig"; path = "Target Support Files/Pods-the-game-the-gameUITests/Pods-the-game-the-gameUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				380A970626F033CD00C9E965 /* Pods_the_game.framework in Frameworks */,
-				380A970D26F03A2000C9E965 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +85,6 @@
 				38E2CD0C26EA7F050097D484 /* the-gameTests */,
 				38E2CD1726EA7F050097D484 /* the-gameUITests */,
 				38E2CCF326EA7F020097D484 /* Products */,
-				67147F32A106CB9E99C2DD33 /* Pods */,
-				9200FFBA1898CBD6C4E32E47 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,7 +108,6 @@
 				38E2CD2626EA85820097D484 /* StartGameScene.swift */,
 				38E2CCFF26EA7F020097D484 /* Main.storyboard */,
 				38E2CD0226EA7F040097D484 /* Assets.xcassets */,
-				380A970E26F03BEF00C9E965 /* animation.json */,
 				38E2CD0426EA7F040097D484 /* Info.plist */,
 			);
 			path = "the-game";
@@ -147,27 +131,6 @@
 			path = "the-gameUITests";
 			sourceTree = "<group>";
 		};
-		67147F32A106CB9E99C2DD33 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0028ED3A75B6800BA0DEB418 /* Pods-the-game.debug.xcconfig */,
-				4A9FA3B206D4DA21D16058AA /* Pods-the-game.release.xcconfig */,
-				D5E1FFCEEE22FAFE8FCE55FD /* Pods-the-game-the-gameUITests.debug.xcconfig */,
-				D62E64D21AB33949EF0AC104 /* Pods-the-game-the-gameUITests.release.xcconfig */,
-				385047D0050485745ADDE62A /* Pods-the-gameTests.debug.xcconfig */,
-				875B57BEABA5E75E8980C9FB /* Pods-the-gameTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		9200FFBA1898CBD6C4E32E47 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				120F003BA67FE00ADEEC6010 /* Pods_the_game.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,20 +138,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38E2CD1D26EA7F050097D484 /* Build configuration list for PBXNativeTarget "the-game" */;
 			buildPhases = (
-				AA69245F6089ECD58228BB56 /* [CP] Check Pods Manifest.lock */,
 				38E2CCEE26EA7F020097D484 /* Sources */,
 				38E2CCEF26EA7F020097D484 /* Frameworks */,
 				38E2CCF026EA7F020097D484 /* Resources */,
-				55B9002D9548A965ADE14480 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "the-game";
-			packageProductDependencies = (
-				380A970C26F03A2000C9E965 /* Lottie */,
-			);
 			productName = "the-game";
 			productReference = 38E2CCF226EA7F020097D484 /* the-game.app */;
 			productType = "com.apple.product-type.application";
@@ -197,7 +155,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38E2CD2026EA7F050097D484 /* Build configuration list for PBXNativeTarget "the-gameTests" */;
 			buildPhases = (
-				0F83941E29E49A58CD35E32A /* [CP] Check Pods Manifest.lock */,
 				38E2CD0526EA7F040097D484 /* Sources */,
 				38E2CD0626EA7F040097D484 /* Frameworks */,
 				38E2CD0726EA7F040097D484 /* Resources */,
@@ -216,11 +173,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38E2CD2326EA7F050097D484 /* Build configuration list for PBXNativeTarget "the-gameUITests" */;
 			buildPhases = (
-				38809E44C325D1B3BA7A0ACA /* [CP] Check Pods Manifest.lock */,
 				38E2CD1026EA7F050097D484 /* Sources */,
 				38E2CD1126EA7F050097D484 /* Frameworks */,
 				38E2CD1226EA7F050097D484 /* Resources */,
-				59AA944FD822A6A19F475C1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,9 +218,6 @@
 				Base,
 			);
 			mainGroup = 38E2CCE926EA7F020097D484;
-			packageReferences = (
-				380A970B26F03A2000C9E965 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-			);
 			productRefGroup = 38E2CCF326EA7F020097D484 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -283,7 +235,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				38E2CD0126EA7F020097D484 /* Main.storyboard in Resources */,
-				380A970F26F03BEF00C9E965 /* animation.json in Resources */,
 				38E2CD0326EA7F040097D484 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,109 +254,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0F83941E29E49A58CD35E32A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-the-gameTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		38809E44C325D1B3BA7A0ACA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-the-game-the-gameUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		55B9002D9548A965ADE14480 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-the-game/Pods-the-game-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-the-game/Pods-the-game-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-the-game/Pods-the-game-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		59AA944FD822A6A19F475C1D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-the-game-the-gameUITests/Pods-the-game-the-gameUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-the-game-the-gameUITests/Pods-the-game-the-gameUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-the-game-the-gameUITests/Pods-the-game-the-gameUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AA69245F6089ECD58228BB56 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-the-game-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		38E2CCEE26EA7F020097D484 /* Sources */ = {
@@ -581,7 +429,6 @@
 		};
 		38E2CD1E26EA7F050097D484 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0028ED3A75B6800BA0DEB418 /* Pods-the-game.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -601,7 +448,6 @@
 		};
 		38E2CD1F26EA7F050097D484 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A9FA3B206D4DA21D16058AA /* Pods-the-game.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -621,7 +467,6 @@
 		};
 		38E2CD2126EA7F050097D484 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 385047D0050485745ADDE62A /* Pods-the-gameTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -644,7 +489,6 @@
 		};
 		38E2CD2226EA7F050097D484 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 875B57BEABA5E75E8980C9FB /* Pods-the-gameTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -667,7 +511,6 @@
 		};
 		38E2CD2426EA7F050097D484 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5E1FFCEEE22FAFE8FCE55FD /* Pods-the-game-the-gameUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -688,7 +531,6 @@
 		};
 		38E2CD2526EA7F050097D484 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D62E64D21AB33949EF0AC104 /* Pods-the-game-the-gameUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -747,25 +589,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		380A970B26F03A2000C9E965 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.2.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		380A970C26F03A2000C9E965 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 380A970B26F03A2000C9E965 /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 38E2CCEA26EA7F020097D484 /* Project object */;
 }

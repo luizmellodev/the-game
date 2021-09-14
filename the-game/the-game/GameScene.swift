@@ -46,13 +46,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func levelManagement(level: Int){
         switch level {
         case 10:
-            speedBox = 1.5
             speedCircle = 1
+            speedBox = 2
             circleAction(speedCircle: speedCircle)
             messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
         case 20:
-            speedBox = 1
-            speedCircle = 0.7
+            speedBox = 1.6
+            speedCircle = 0.8
             circleAction(speedCircle: speedCircle)
             messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
         case 30:
@@ -288,9 +288,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             scoreLabel.text = "\(count)"
             if(count == 10 || count == 20 || count == 30 || count == 50){
                 levelManagement(level: count)
+                levelText.removeFromParent()
                 showLevel()
             }
-            var boxTimer = Timer.scheduledTimer(timeInterval: speedBox, target: self, selector: Selector("createBox"), userInfo: nil, repeats: true)
+            _ = Timer.scheduledTimer(timeInterval: speedBox, target: self, selector: #selector(createBox), userInfo: nil, repeats: true)
             print("Círculo: \(speedCircle)")
             print("Box: \(speedBox)")
 
