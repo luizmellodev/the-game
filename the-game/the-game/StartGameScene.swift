@@ -10,13 +10,16 @@ import SpriteKit
 class StartGameScene: SKScene {
     
     override func didMove(to: SKView) {
-        self.backgroundColor = UIColor.black
-        let startGameButton = SKLabelNode(fontNamed: "MarkerFelt-Thin")
+        self.backgroundColor = UIColor.systemBackground
+        let systemFont = UIFont.systemFont(ofSize: 96.0)
+
+        let startGameButton = SKLabelNode(fontNamed: "TimesNewRomanPSMT")
+
         startGameButton.position = CGPoint(x: size.width/2, y: size.height/2)
         startGameButton.name = "startgame"
         startGameButton.text = "Tap to play!"
         startGameButton.fontSize = 20
-        startGameButton.fontColor = SKColor.white
+        startGameButton.fontColor = SKColor.label
         addChild(startGameButton)
     }
     
