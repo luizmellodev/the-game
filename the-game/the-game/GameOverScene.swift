@@ -12,45 +12,50 @@ class GameOverScene: SKScene {
     var over = SKLabelNode(text: "Over")
     var game = SKLabelNode(text: "Game")
     var score = SKLabelNode(text: "\(scoreLabel.text!)")
-    var score2 = SKLabelNode(text: "pontos")
+    var score2 = SKLabelNode(text: "Score")
     
     
     override init(size: CGSize) {
         super.init(size: size)
     }
     
-    let systemFont = UIFont.systemFont(ofSize: 96.0)
+//    let systemFont = UIFont.systemFont(ofSize: 96.0)
     
     override func didMove(to view: SKView) {
-        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.backgroundColor = UIColor.systemBackground
+
         showTexts()
     }
     
-    func showTexts(){
-        score.fontSize = 150
-        score.fontColor = UIColor.blue
-        score.fontName = "TimesNewRomanPSMT"
-        score.position = CGPoint(x: (0), y: 30)
-        addChild(score)
+    func showTexts() {
+        // fonta name "HelveticaNeue-UltraLight"
         
-        
-        score2.fontSize = 50
-        score2.fontColor = UIColor.gray
-        score2.position = CGPoint(x: 0, y: 0)
+        score2.fontSize = 50.0
+        score2.fontColor = SKColor.label
+        score2.fontName = "HelveticaNeue-Bold"
+        score2.position = CGPoint(x: self.view!.frame.width - 24, y: self.view!.frame.height / 2)
+        score2.horizontalAlignmentMode = .right
         addChild(score2)
         
         
+        score.fontSize = 50.0
+        score.fontColor = SKColor.label
+        score.fontName = "HelveticaNeue-Light"
+        score.position = CGPoint(x: score2.frame.maxX , y: score2.frame.minY - score.frame.height - 10)
+        score.horizontalAlignmentMode = .right
+        addChild(score)
+        
         
         game.fontSize = 96.0
-        game.fontColor = UIColor.label
-        game.fontName = "TimesNewRomanPSMT"
-        game.position = CGPoint(x: (size.width / 3) + 10, y: size.height - 150)
+        game.fontColor = SKColor.label
+        game.fontName = "HelveticaNeue-Bold"
+        game.position = CGPoint(x: (size.width / 3) + 25, y: size.height - 150)
         addChild(game)
         
         over.fontSize = 96.0
-        over.fontColor = UIColor.label
-        over.fontName = "TimesNewRomanPSMT"
-        over.position = CGPoint(x: (size.width / 3) - 15, y: size.height - 240)
+        over.fontColor = SKColor.label
+        over.fontName = "HelveticaNeue-Bold"
+        over.position = CGPoint(x: size.width / 3, y: size.height - 240)
         addChild(over)
     }
     

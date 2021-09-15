@@ -8,21 +8,24 @@
 import UIKit
 import SpriteKit
 class StartGameScene: SKScene {
+    let goAhead = SKLabelNode(text: "Go ahead")
     
     override func didMove(to: SKView) {
         self.backgroundColor = UIColor.systemBackground
-        let systemFont = UIFont.systemFont(ofSize: 96.0)
 
-        let startGameButton = SKLabelNode(fontNamed: "TimesNewRomanPSMT")
-
-        startGameButton.position = CGPoint(x: size.width/2, y: size.height/2)
-        startGameButton.name = "startgame"
-        startGameButton.text = "Tap to play!"
-        startGameButton.fontSize = 20
-        startGameButton.fontColor = SKColor.label
-        addChild(startGameButton)
+        showTexts()
     }
     
+    func showTexts() {
+        goAhead.fontSize = 83.0
+        goAhead.fontColor = SKColor.label
+        goAhead.fontName = "HelveticaNeue-Bold"
+        goAhead.position = CGPoint(x: self.view!.frame.width, y: (self.view!.frame.height / 3))
+        goAhead.horizontalAlignmentMode = .right
+        addChild(goAhead)
+    
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
