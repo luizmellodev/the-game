@@ -18,12 +18,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var circle: SKShapeNode = SKShapeNode()
     private var bar: SKSpriteNode = SKSpriteNode()
     private var box: SKShapeNode = SKShapeNode()
-//    private var messageLevel: SKLabelNode = SKLabelNode()
     private var levelText: SKLabelNode = SKLabelNode()
+    private var godmodText: SKLabelNode = SKLabelNode()
+    private var godmod: Bool = false
+    private var barWidth: Double = 130
+    private var isTouched: Bool = false
     var circleGravity: Bool = false
     var speedBox: Double = 2
     var speedCircle: Double = 1.5
-
+    
     var lastUpdateTime: TimeInterval?
     var count = 0
     
@@ -36,8 +39,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setPhysics()
         createScore()
         circleAction(speedCircle: speedCircle)
-        barAction(speedCircle: speedCircle)
-//        showDifficulty()
         physicsWorld.contactDelegate = self
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
@@ -50,41 +51,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             speedCircle = 1
             speedBox = 2
             circleAction(speedCircle: speedCircle)
-            barAction(speedCircle: speedCircle)
-//            messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
         case 20:
-            speedBox = 1.6
+            speedBox = 1.9
             speedCircle = 0.8
             circleAction(speedCircle: speedCircle)
-            barAction(speedCircle: speedCircle)
-//            messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
         case 30:
             circleGravity = true
-//            messageLevel.text = "gravidade do círculo *ATIVADA*"
-            barAction(speedCircle: speedCircle)
         case 50:
             speedBox = 0.3
-//            messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
         case 70:
             speedBox = 0.1
-//            messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
         default:
             speedBox = 5
             circleGravity = false
-//            messageLevel.text = "Ops, você é tão bom que quebrou o jogo! =)"
         }
     }
-    
-//    func showDifficulty(){
-//        messageLevel = SKLabelNode()
-//        messageLevel.name = "messageLevel"
-//        messageLevel.position = CGPoint(x: 0.0, y: -250)
-//        messageLevel.fontSize = 15
-//        messageLevel.fontColor = SKColor.gray
-//        messageLevel.text = "A velocidade está em \(speedBox)... vamos ver e você é bom.."
-//        self.addChild(messageLevel)
-//    }
-    
     func showLevel(){
         let levelText = SKLabelNode()
         levelText.name = "levelText"
@@ -101,7 +82,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let sequence = SKAction.sequence([wait, fadeIn, fadeOut])
         levelText.run(sequence)
         self.levelText = levelText
-
+        
         self.addChild(levelText)
     }
     
@@ -114,6 +95,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.text = "\(count)"
         
         self.addChild(scoreLabel)
+    }
+    
+    func godmodTextFunc(){
+        godmodText = SKLabelNode()
+        godmodText.name = "godmodText"
+        godmodText.position = CGPoint(x: ((self.view?.bounds.size.width ?? 0)/2), y: ((self.view?.bounds.size.height ?? 0)/4))
+        godmodText.fontSize = 15
+        godmodText.fontColor = SKColor.blue
+        godmodText.text = "U found an easter egg! GOD MODE ACTIVATED =)"
+        self.addChild(godmodText)
     }
     
     func displayGameOver() {
@@ -206,7 +197,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createBar() {
-        bar = SKSpriteNode(color: UIColor.label, size:  CGSize(width: 130, height: 10))
+        bar = SKSpriteNode(color: UIColor.label, size:  CGSize(width: self.barWidth, height: 10))
         bar.position = CGPoint(x: 0.0, y: -260.0)
         bar.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
@@ -214,12 +205,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     //modo desenvolvedor (NAO USAR)
-    func barAction(speedCircle: Double){
-        let left = SKAction.move(to: CGPoint(x: (self.frame.size.width/2 - 20), y: bar.position.y), duration: speedCircle)
-        let right = SKAction.move(to: CGPoint(x: -(self.frame.size.width/2 - 20), y: bar.position.y), duration: speedCircle)
-        let sequenceAction = SKAction.sequence([left, right])
-        let actionForever = SKAction.repeatForever(sequenceAction)
-        bar.run(actionForever)
+    func godmodFunc(speedCircle: Double, godmod: Bool){
+        if(self.godmod == true){
+            self.backgroundColor = UIColor.darkGray
+            bar.run(SKAction.moveTo(x: circle.position.x, duration: 0.0))
+            self.bar.scale(to: CGSize(width: self.barWidth, height: 10))
+            //            let left = SKAction.move(to: CGPoint(x: (self.frame.size.width/2 - 20), y: bar.position.y), duration: speedCircle)
+            //            let right = SKAction.move(to: CGPoint(x: -(self.frame.size.width/2 - 20), y: bar.position.y), duration: speedCircle)
+            //            let sequenceAction = SKAction.sequence([left, right])
+            //            let actionForever = SKAction.repeatForever(sequenceAction)
+            //            bar.run(actionForever)
+        }
+        else{
+            self.bar.scale(to: CGSize(width: self.barWidth, height: 10))
+            self.backgroundColor = UIColor.systemBackground
+            self.enumerateChildNodes(withName: "godmodText"){_,_ in
+                self.godmodText.removeFromParent()
+            }
+            bar.removeAllActions()
+        }
+        
     }
     
     @objc func createBox() {
@@ -266,7 +271,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+        for t in touches {
+            self.touchDown(atPoint: t.location(in: self))
+            
+            let touch = touches.first!
+            if scoreLabel.contains(touch.location(in: self)) {
+                print("tocou")
+                if(self.godmod == false){
+                    self.barWidth = 500
+                    self.godmod = true
+                }
+                else{
+                    self.barWidth = 130
+                    self.godmod = false
+                }
+            }
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -314,8 +334,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             _ = Timer.scheduledTimer(timeInterval: speedBox, target: self, selector: #selector(createBox), userInfo: nil, repeats: true)
             print("Círculo: \(speedCircle)")
             print("Box: \(speedBox)")
-
         }
+        godmodFunc(speedCircle: speedCircle, godmod: self.godmod)
     }
     
 }
