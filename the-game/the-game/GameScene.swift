@@ -18,7 +18,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var circle: SKShapeNode = SKShapeNode()
     private var bar: SKSpriteNode = SKSpriteNode()
     private var box: SKShapeNode = SKShapeNode()
-    private var messageLevel: SKLabelNode = SKLabelNode()
+//    private var messageLevel: SKLabelNode = SKLabelNode()
     private var levelText: SKLabelNode = SKLabelNode()
     var circleGravity: Bool = false
     var speedBox: Double = 2
@@ -36,7 +36,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setPhysics()
         createScore()
         circleAction(speedCircle: speedCircle)
-        showDifficulty()
+        barAction(speedCircle: speedCircle)
+//        showDifficulty()
         physicsWorld.contactDelegate = self
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
@@ -49,40 +50,43 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             speedCircle = 1
             speedBox = 2
             circleAction(speedCircle: speedCircle)
-            messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
+            barAction(speedCircle: speedCircle)
+//            messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
         case 20:
             speedBox = 1.6
             speedCircle = 0.8
             circleAction(speedCircle: speedCircle)
-            messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
+            barAction(speedCircle: speedCircle)
+//            messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
         case 30:
             circleGravity = true
-            messageLevel.text = "gravidade do círculo *ATIVADA*"
+//            messageLevel.text = "gravidade do círculo *ATIVADA*"
+            barAction(speedCircle: speedCircle)
         case 50:
             speedBox = 0.3
-            messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
+//            messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
         case 70:
             speedBox = 0.1
-            messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
+//            messageLevel.text = "Velocidade alterada para \(speedBox) km/h da queda e \(speedCircle) km/h do círculo"
         default:
             speedBox = 5
             circleGravity = false
-            messageLevel.text = "Ops, você é tão bom que quebrou o jogo! =)"
+//            messageLevel.text = "Ops, você é tão bom que quebrou o jogo! =)"
         }
     }
     
-    func showDifficulty(){
-        messageLevel = SKLabelNode()
-        messageLevel.name = "messageLevel"
-        messageLevel.position = CGPoint(x: 0.0, y: -250)
-        messageLevel.fontSize = 15
-        messageLevel.fontColor = SKColor.gray
-        messageLevel.text = "A velocidade está em \(speedBox)... vamos ver e você é bom.."
-        self.addChild(messageLevel)
-    }
+//    func showDifficulty(){
+//        messageLevel = SKLabelNode()
+//        messageLevel.name = "messageLevel"
+//        messageLevel.position = CGPoint(x: 0.0, y: -250)
+//        messageLevel.fontSize = 15
+//        messageLevel.fontColor = SKColor.gray
+//        messageLevel.text = "A velocidade está em \(speedBox)... vamos ver e você é bom.."
+//        self.addChild(messageLevel)
+//    }
     
     func showLevel(){
-        levelText = SKLabelNode()
+        let levelText = SKLabelNode()
         levelText.name = "levelText"
         levelText.fontName = "HelveticaNeue-Bold"
         levelText.position = CGPoint(x: 0.0, y: 0.0)
@@ -91,15 +95,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         levelText.text = "level \(count)"
         levelText.zPosition = -1
         
+        let wait = SKAction.wait(forDuration: 1)
+        let fadeIn = SKAction.fadeIn(withDuration: 2)
+        let fadeOut = SKAction.fadeOut(withDuration: 2)
+        let sequence = SKAction.sequence([wait, fadeIn, fadeOut])
+        levelText.run(sequence)
+        self.levelText = levelText
+
         self.addChild(levelText)
     }
     
     func createScore(){
         scoreLabel = SKLabelNode()
         scoreLabel.name = "scoreLabel"
-        scoreLabel.position = CGPoint(x: 0.0, y: -200.0)
+        scoreLabel.position = CGPoint(x: ((self.view?.bounds.size.width ?? 0) / 2) - 30, y: ((self.view?.bounds.size.height ?? 0) / 3) + 20)
         scoreLabel.fontSize = 30
-        scoreLabel.fontColor = SKColor.blue
+        scoreLabel.fontColor = SKColor.label
         scoreLabel.text = "\(count)"
         
         self.addChild(scoreLabel)
@@ -187,8 +198,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func circleAction(speedCircle: Double){
-        let left = SKAction.move(to: CGPoint(x: -150, y: circle.position.y), duration: speedCircle)
-        let right = SKAction.move(to: CGPoint(x: 150, y: circle.position.y), duration: speedCircle)
+        let left = SKAction.move(to: CGPoint(x: (self.frame.size.width/2 - 20), y: circle.position.y), duration: speedCircle)
+        let right = SKAction.move(to: CGPoint(x: -(self.frame.size.width/2 - 20), y: circle.position.y), duration: speedCircle)
         let sequenceAction = SKAction.sequence([left, right])
         let actionForever = SKAction.repeatForever(sequenceAction)
         circle.run(actionForever)
@@ -200,6 +211,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bar.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         self.addChild(bar)
+    }
+    
+    //modo desenvolvedor (NAO USAR)
+    func barAction(speedCircle: Double){
+        let left = SKAction.move(to: CGPoint(x: (self.frame.size.width/2 - 20), y: bar.position.y), duration: speedCircle)
+        let right = SKAction.move(to: CGPoint(x: -(self.frame.size.width/2 - 20), y: bar.position.y), duration: speedCircle)
+        let sequenceAction = SKAction.sequence([left, right])
+        let actionForever = SKAction.repeatForever(sequenceAction)
+        bar.run(actionForever)
     }
     
     @objc func createBox() {
