@@ -38,6 +38,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         createBar()
         setPhysics()
         createScore()
+        godmodTextFunc()
         circleAction(speedCircle: speedCircle)
         physicsWorld.contactDelegate = self
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -51,22 +52,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             speedCircle = 1
             speedBox = 2
             circleAction(speedCircle: speedCircle)
-        case 20:
-            speedBox = 1.9
-            speedCircle = 0.8
-            circleAction(speedCircle: speedCircle)
         case 30:
-            circleGravity = true
+            speedBox = 1.9
+            speedCircle = 0.9
+            circleAction(speedCircle: speedCircle)
         case 50:
-            speedBox = 0.3
-        case 70:
-            speedBox = 0.1
+            speedBox = 1.7
+            speedCircle = 0.8
+        case 100:
+            speedBox = 1.4
+            speedCircle = 0.4
+        case 130:
+            speedBox = 1.5
+            circleGravity = true
         default:
-            speedBox = 5
+            speedBox = 2
             circleGravity = false
         }
     }
-    func showLevel(){
+    @objc func showLevel(){
         let levelText = SKLabelNode()
         levelText.name = "levelText"
         levelText.fontName = "HelveticaNeue-Bold"
@@ -98,13 +102,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func godmodTextFunc(){
-        godmodText = SKLabelNode()
+        let godmodText = SKLabelNode()
         godmodText.name = "godmodText"
-        godmodText.position = CGPoint(x: ((self.view?.bounds.size.width ?? 0)/2), y: ((self.view?.bounds.size.height ?? 0)/4))
+        godmodText.position = CGPoint(x: 0, y: -250)
         godmodText.fontSize = 15
-        godmodText.fontColor = SKColor.blue
+        godmodText.fontColor = SKColor.orange
         godmodText.text = "U found an easter egg! GOD MODE ACTIVATED =)"
-        self.addChild(godmodText)
+        godmodText.fontName = "HelveticaNeue-Normal"
+        
+        self.godmodText = godmodText
+        
+        self.godmodText.alpha = 0.0
+        
+        self.addChild(self.godmodText)
     }
     
     func displayGameOver() {
@@ -128,13 +138,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if nodeA.name == "box" {
             if nodeA.position.x < 0 {
-                let randomX = Int.random(in: 0...30)
-                let randomY = Int.random(in: 10..<25)
+                let randomX = Int.random(in: 100...200)
+                let randomY = Int.random(in: 70...100)
                 nodeA.physicsBody?.applyImpulse(CGVector(dx: randomX, dy: randomY))
             }
             else {
-                let randomX = Int.random(in: -30...0)
-                let randomY = Int.random(in: 10..<25)
+                let randomX = Int.random(in: -200...(-100))
+                let randomY = Int.random(in: 70...100)
                 nodeA.physicsBody?.applyImpulse(CGVector(dx: randomX, dy: randomY))
             }
             
@@ -142,13 +152,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         } else if nodeB.name == "box" {
             if nodeB.position.x < 0 {
-                let randomX = Int.random(in: 30...100)
-                let randomY = Int.random(in: 50..<100)
+                let randomX = Int.random(in: 100...200)
+                let randomY = Int.random(in: 70..<100)
                 nodeB.physicsBody?.applyImpulse(CGVector(dx: randomX, dy: randomY))
             }
             else {
-                let randomX = Int.random(in: -100...(-30))
-                let randomY = Int.random(in: 50..<100)
+                let randomX = Int.random(in: -200...(-100))
+                let randomY = Int.random(in: 70...100)
                 nodeB.physicsBody?.applyImpulse(CGVector(dx: randomX, dy: randomY))
             }
         }
@@ -208,20 +218,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func godmodFunc(speedCircle: Double, godmod: Bool){
         if(self.godmod == true){
             self.backgroundColor = UIColor.darkGray
+            self.godmodText.alpha = 1.0
             bar.run(SKAction.moveTo(x: circle.position.x, duration: 0.0))
             self.bar.scale(to: CGSize(width: self.barWidth, height: 10))
-            //            let left = SKAction.move(to: CGPoint(x: (self.frame.size.width/2 - 20), y: bar.position.y), duration: speedCircle)
-            //            let right = SKAction.move(to: CGPoint(x: -(self.frame.size.width/2 - 20), y: bar.position.y), duration: speedCircle)
-            //            let sequenceAction = SKAction.sequence([left, right])
-            //            let actionForever = SKAction.repeatForever(sequenceAction)
-            //            bar.run(actionForever)
         }
         else{
             self.bar.scale(to: CGSize(width: self.barWidth, height: 10))
             self.backgroundColor = UIColor.systemBackground
-            self.enumerateChildNodes(withName: "godmodText"){_,_ in
-                self.godmodText.removeFromParent()
-            }
+            self.godmodText.alpha = 0.0
+            //            childNode(withName: "godmodText")?.removeFromParent()
             bar.removeAllActions()
         }
         
@@ -278,7 +283,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if scoreLabel.contains(touch.location(in: self)) {
                 print("tocou")
                 if(self.godmod == false){
-                    self.barWidth = 500
+                    self.barWidth = 370
                     self.godmod = true
                 }
                 else{
