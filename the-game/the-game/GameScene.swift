@@ -344,7 +344,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             lastUpdateTime = currentTime
             count += 1
             scoreLabel.text = "\(count)"
-            if(count == 5 || count == 20 || count == 30 || count == 50){
+            if(count == 1 || count == 10 || count == 20 || count == 30 || count == 50){
                 levelManagement(level: count)
                 levelText.removeFromParent()
                 showLevel()
