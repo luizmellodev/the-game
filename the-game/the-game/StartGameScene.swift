@@ -7,6 +7,7 @@
 
 import UIKit
 import SpriteKit
+
 class StartGameScene: SKScene {
     let goAhead = SKLabelNode(text: "Go ahead")
     let mission = SKLabelNode(text: "Mission:")
@@ -50,12 +51,10 @@ class StartGameScene: SKScene {
         desc.lineBreakMode = .byWordWrapping
         desc.numberOfLines = 4
         addChild(desc)
-        
      
     }
     
     func showTexts() {
-        
         
         goAhead.fontSize = 70.0
         goAhead.fontColor = SKColor.label
@@ -79,9 +78,9 @@ class StartGameScene: SKScene {
         stayAlive.position = CGPoint(x: mission.frame.minX, y: mission.frame.minY - 20)
         stayAlive.horizontalAlignmentMode = .left
         addChild(stayAlive)
-    
-        
+            
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             if touch == touches.first {
