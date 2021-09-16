@@ -14,17 +14,57 @@ class GameOverScene: SKScene {
     var score = SKLabelNode(text: "\(scoreLabel.text!)")
     var score2 = SKLabelNode(text: "Score")
     
+    private var rings: [RingPart] = []
+    
+    private var motivationMessage: SKLabelNode = SKLabelNode(text: "Looks like you didn`t resist the blocks` attacks!")
+    private var tryAgain: SKShapeNode = SKShapeNode()
     
     override init(size: CGSize) {
         super.init(size: size)
     }
     
-//    let systemFont = UIFont.systemFont(ofSize: 96.0)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //    let systemFont = UIFont.systemFont(ofSize: 96.0)
     
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor.systemBackground
-
+        
+        backgroundColor = .white
+        
         showTexts()
+        
+        //Rings calls
+        createFirstRings()
+        createSecondRings()
+        createThirdRings()
+        createFourthRings()
+        
+        //button and message
+        let startBtn = SKShapeNode(rectOf: CGSize(width: 342, height: 54), cornerRadius: 10)
+        startBtn.position = CGPoint(x: self.view!.frame.width / 2, y: self.frame.minY + 80)
+        startBtn.fillColor = UIColor.label
+        self.addChild(startBtn)
+        
+        let startLabel = SKLabelNode(text: "Start")
+        startLabel.fontSize = 20.0
+        startLabel.fontColor = SKColor.systemBackground
+        startLabel.fontName = "HelveticaNeue-Bold"
+        startLabel.position = CGPoint(x: 0, y: -5)
+        startLabel.horizontalAlignmentMode = .center
+        startBtn.addChild(startLabel)
+        
+        motivationMessage.fontSize = 14.0
+        motivationMessage.fontColor = SKColor.label
+        motivationMessage.fontName = "HelveticaNeue-Regular"
+        motivationMessage.position = CGPoint(x: startBtn.frame.width, y: startBtn.frame.maxY + 20)
+        motivationMessage.horizontalAlignmentMode = .right
+        motivationMessage.zPosition = 1
+        motivationMessage.lineBreakMode = .byWordWrapping
+        motivationMessage.numberOfLines = 4
+        addChild(motivationMessage)
     }
     
     func showTexts() {
@@ -50,6 +90,8 @@ class GameOverScene: SKScene {
         game.fontColor = SKColor.label
         game.fontName = "HelveticaNeue-Bold"
         game.position = CGPoint(x: (size.width / 3) + 25, y: size.height - 150)
+        //        game.lineBreakMode = NSLineBreakMode.byWordWrapping
+        //        game.numberOfLines = 0
         addChild(game)
         
         over.fontSize = 96.0
@@ -59,10 +101,153 @@ class GameOverScene: SKScene {
         addChild(over)
     }
     
+    //MARK: - Animated Rings
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func createFirstRings() {
+        let nodePosition = CGPoint(x: self.frame.maxX/2 , y: self.frame.minY/2 + 280)
+        
+        //Ring/Ellipse 1
+        let node = SKSpriteNode(imageNamed: "ring1")
+        
+        node.position = nodePosition
+        node.zPosition = 1
+        
+        let ring1 = RingPart(type: RingPart.RingSpritesNodes.ring1, position: nodePosition, node: node)
+        
+        rings.append(ring1)
+        
+        node.run(.sequence([
+            .wait(forDuration: 0),
+            .repeatForever(.sequence([
+                // A group of actions get performed simultaneously
+                .group([
+                    .sequence([
+                        .scale(to: 1.5, duration: 0.1),
+                        .scale(to: 1, duration: 1.1)
+                    ]),
+                    // Rotate by 360 degrees (pi * 2 in radians)
+                    .rotate(byAngle: .pi * 2, duration: 0.6)
+                ]),
+                .wait(forDuration: 0)
+            ]))
+        ]))
+        
+        addChild(node)
     }
+    
+    func createSecondRings() {
+        let nodePosition = CGPoint(x: self.frame.maxX/2 , y: self.frame.minY/2 + 280)
+        
+        //Ring/Ellipse 2
+        let node = SKSpriteNode(imageNamed: "ring2")
+        
+        node.position = nodePosition
+        node.zPosition = 1
+        
+        let ring2 = RingPart(type: RingPart.RingSpritesNodes.ring2, position: nodePosition, node: node)
+        
+        rings.append(ring2)
+        
+        node.run(.sequence([
+            .wait(forDuration: 0),
+            .repeatForever(.sequence([
+                // A group of actions get performed simultaneously
+                .group([
+                    .sequence([
+                        .scale(to: 1.5, duration: 0.1),
+                        .scale(to: 1, duration: 1.1)
+                    ]),
+                    // Rotate by 360 degrees (pi * 2 in radians)
+                    .rotate(byAngle: .pi * 2, duration: 0.6)
+                ]),
+                .wait(forDuration: 0)
+            ]))
+        ]))
+        
+        addChild(node)
+    }
+    
+    func createThirdRings() {
+        let nodePosition = CGPoint(x: self.frame.maxX/2 , y: self.frame.minY/2 + 280)
+        
+        //Ring/Ellipse 3
+        let node = SKSpriteNode(imageNamed: "ring3")
+        
+        node.position = nodePosition
+        node.zPosition = 1
+        
+        let ring3 = RingPart(type: RingPart.RingSpritesNodes.ring3, position: nodePosition, node: node)
+        
+        rings.append(ring3)
+        
+        node.run(.sequence([
+            .wait(forDuration: 0),
+            .repeatForever(.sequence([
+                // A group of actions get performed simultaneously
+                .group([
+                    .sequence([
+                        .scale(to: 1.5, duration: 0.1),
+                        .scale(to: 1, duration: 1.1)
+                    ]),
+                    // Rotate by 360 degrees (pi * 2 in radians)
+                    .rotate(byAngle: .pi * 2, duration: 0.6)
+                ]),
+                .wait(forDuration: 0)
+            ]))
+        ]))
+        
+        addChild(node)
+    }
+    
+    func createFourthRings() {
+        let nodePosition = CGPoint(x: self.frame.maxX/2 , y: self.frame.minY/2 + 280)
+        
+        //Ring/Vector 4
+        let node = SKSpriteNode(imageNamed: "ring4")
+        
+        node.position = nodePosition
+        node.zPosition = 1
+        
+        let ring4 = RingPart(type: RingPart.RingSpritesNodes.ring4, position: nodePosition, node: node)
+        
+        rings.append(ring4)
+        
+        addChild(node)
+    }
+    
+    //MARK: - Motivation Message and Button Try Again
+    
+    //    func createMotivationMessage() {
+    //        motivationMessage.fontSize = 14.0
+    //        motivationMessage.fontColor = .black
+    //        motivationMessage.fontName = "HelveticaNeue-Regular"
+    //        motivationMessage.position = CGPoint(x: tryAgain.frame.width, y: tryAgain.frame.maxY + 20)
+    //        motivationMessage.zPosition = 1
+    //        motivationMessage.horizontalAlignmentMode = .right
+    ////        motivationMessage.lineBreakMode = NSLineBreakMode.byWordWrapping
+    ////        motivationMessage.numberOfLines = 0
+    //        self.addChild(motivationMessage)
+    //
+    //    }
+    //
+    //    func createTryAgain() {
+    //        let tryAgain = SKShapeNode(rectOf: CGSize(width: 342, height: 54), cornerRadius: 10)
+    //        let nodePosition = CGPoint(x: self.view!.frame.width/2 , y: self.view!.frame.minY + 80)
+    //        tryAgain.position = nodePosition
+    //        tryAgain.zPosition = 1
+    //        tryAgain.fillColor = .label
+    //
+    //        self.addChild(tryAgain)
+    //
+    //        let tryAgainLabel = SKLabelNode(text: "Try again")
+    //        tryAgainLabel.fontSize = 15.0
+    //        tryAgainLabel.fontColor = SKColor.systemBackground
+    //        tryAgainLabel.fontName = "HelveticaNeue-Bold"
+    //        tryAgainLabel.position = CGPoint(x: 0, y: -5)
+    //        tryAgainLabel.horizontalAlignmentMode = .center
+    //
+    //        tryAgain.addChild(tryAgainLabel)
+    //    }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
