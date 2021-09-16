@@ -51,7 +51,7 @@ class GameOverScene: SKScene {
         
         self.addChild(tryAgain)
         
-        let tryAgainLabel = SKLabelNode(text: "Start")
+        let tryAgainLabel = SKLabelNode(text: "Try Again")
         tryAgainLabel.fontSize = 20.0
         tryAgainLabel.fontColor = SKColor.systemBackground
         tryAgainLabel.fontName = "HelveticaNeue-Bold"
