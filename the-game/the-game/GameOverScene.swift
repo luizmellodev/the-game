@@ -29,6 +29,7 @@ class GameOverScene: SKScene {
     
     //    let systemFont = UIFont.systemFont(ofSize: 96.0)
     
+    //MARK: - didMove
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor.systemBackground
         
@@ -42,24 +43,28 @@ class GameOverScene: SKScene {
         createThirdRings()
         createFourthRings()
         
-        //button and message
-        let startBtn = SKShapeNode(rectOf: CGSize(width: 342, height: 54), cornerRadius: 10)
-        startBtn.position = CGPoint(x: self.view!.frame.width / 2, y: self.frame.minY + 80)
-        startBtn.fillColor = UIColor.label
-        self.addChild(startBtn)
+        //button
+        let tryAgain = SKShapeNode(rectOf: CGSize(width: 342, height: 54), cornerRadius: 10)
+        tryAgain.position = CGPoint(x: self.view!.frame.width / 2, y: self.frame.minY + 80)
+        tryAgain.fillColor = UIColor.label
+        tryAgain.name = "tryAgain"
         
-        let startLabel = SKLabelNode(text: "Start")
-        startLabel.fontSize = 20.0
-        startLabel.fontColor = SKColor.systemBackground
-        startLabel.fontName = "HelveticaNeue-Bold"
-        startLabel.position = CGPoint(x: 0, y: -5)
-        startLabel.horizontalAlignmentMode = .center
-        startBtn.addChild(startLabel)
+        self.addChild(tryAgain)
         
+        let tryAgainLabel = SKLabelNode(text: "Try Again")
+        tryAgainLabel.fontSize = 20.0
+        tryAgainLabel.fontColor = SKColor.systemBackground
+        tryAgainLabel.fontName = "HelveticaNeue-Bold"
+        tryAgainLabel.position = CGPoint(x: 0, y: -5)
+        tryAgainLabel.horizontalAlignmentMode = .center
+        
+        tryAgain.addChild(tryAgainLabel)
+        
+        //message
         motivationMessage.fontSize = 14.0
         motivationMessage.fontColor = SKColor.label
         motivationMessage.fontName = "HelveticaNeue-Regular"
-        motivationMessage.position = CGPoint(x: startBtn.frame.width, y: startBtn.frame.maxY + 20)
+        motivationMessage.position = CGPoint(x: tryAgain.frame.width, y: tryAgain.frame.maxY + 20)
         motivationMessage.horizontalAlignmentMode = .right
         motivationMessage.zPosition = 1
         motivationMessage.lineBreakMode = .byWordWrapping
@@ -249,12 +254,23 @@ class GameOverScene: SKScene {
     //        tryAgain.addChild(tryAgainLabel)
     //    }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        let gameScene = GameScene(size: size)
-        gameScene.scaleMode = scaleMode
-        
-        let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-        view?.presentScene(gameScene, transition: reveal)
+    //MARK: - touchesBegan
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            if touch == touches.first {
+                
+                enumerateChildNodes(withName: "//*") { (node, stop) in
+                    if node.name == "tryAgain" {
+                        if node.contains(touch.location(in: self)) {
+                            let gameScene = GameScene(size: self.size)
+                            gameScene.scaleMode = self.scaleMode
+                            
+                            let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+                            self.view?.presentScene(gameScene, transition: reveal)
+                        }
+                    }
+                }
+            }
+        }
     }
 }

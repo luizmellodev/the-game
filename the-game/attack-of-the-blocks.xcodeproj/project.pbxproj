@@ -16,6 +16,7 @@
 		38E2CD0E26EA7F050097D484 /* the_gameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2CD0D26EA7F050097D484 /* the_gameTests.swift */; };
 		38E2CD1926EA7F050097D484 /* the_gameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2CD1826EA7F050097D484 /* the_gameUITests.swift */; };
 		38E2CD2726EA85820097D484 /* StartGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2CD2626EA85820097D484 /* StartGameScene.swift */; };
+		E0E6407F26F3801F003930A3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E6407E26F3801F003930A3 /* Launch Screen.storyboard */; };
 		F41FB92826F2BB4D00657E43 /* RingsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41FB92726F2BB4D00657E43 /* RingsClass.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		38E2CD1826EA7F050097D484 /* the_gameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = the_gameUITests.swift; sourceTree = "<group>"; };
 		38E2CD1A26EA7F050097D484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38E2CD2626EA85820097D484 /* StartGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameScene.swift; sourceTree = "<group>"; };
+		E0E6407E26F3801F003930A3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F41FB92726F2BB4D00657E43 /* RingsClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingsClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				38E2CCFF26EA7F020097D484 /* Main.storyboard */,
 				38E2CD0226EA7F040097D484 /* Assets.xcassets */,
 				38E2CD0426EA7F040097D484 /* Info.plist */,
+				E0E6407E26F3801F003930A3 /* Launch Screen.storyboard */,
 			);
 			path = "the-game";
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E6407F26F3801F003930A3 /* Launch Screen.storyboard in Resources */,
 				38E2CD0126EA7F020097D484 /* Main.storyboard in Resources */,
 				38E2CD0326EA7F040097D484 /* Assets.xcassets in Resources */,
 			);
@@ -445,7 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8JAU65C453;
+				DEVELOPMENT_TEAM = 898BYM6W35;
 				INFOPLIST_FILE = "the-game/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -465,7 +469,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8JAU65C453;
+				DEVELOPMENT_TEAM = 898BYM6W35;
 				INFOPLIST_FILE = "the-game/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -7,6 +7,7 @@
 
 import UIKit
 import SpriteKit
+
 class StartGameScene: SKScene {
     let goAhead = SKLabelNode(text: "Go ahead")
     let mission = SKLabelNode(text: "Mission:")
@@ -28,6 +29,7 @@ class StartGameScene: SKScene {
         let startBtn = SKShapeNode(rectOf: CGSize(width: 342, height: 54), cornerRadius: 10)
         startBtn.position = CGPoint(x: self.view!.frame.width / 2, y: self.frame.minY + 80)
         startBtn.fillColor = UIColor.label
+        startBtn.name = "startBtn"
         self.addChild(startBtn)
         
         let startLabel = SKLabelNode(text: "Start")
@@ -49,12 +51,10 @@ class StartGameScene: SKScene {
         desc.lineBreakMode = .byWordWrapping
         desc.numberOfLines = 4
         addChild(desc)
-        
      
     }
     
     func showTexts() {
-        
         
         goAhead.fontSize = 70.0
         goAhead.fontColor = SKColor.label
@@ -78,20 +78,38 @@ class StartGameScene: SKScene {
         stayAlive.position = CGPoint(x: mission.frame.minX, y: mission.frame.minY - 20)
         stayAlive.horizontalAlignmentMode = .left
         addChild(stayAlive)
-    
-        
+            
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
-            let location = touch.location(in: self)
-            let gameOverScene = GameScene(size: size)
-            gameOverScene.scaleMode = scaleMode
-            let transitionType = SKTransition.flipVertical(withDuration: 2.0)
-            view?.presentScene(gameOverScene,transition: transitionType)
-            
+            if touch == touches.first {
+                
+                enumerateChildNodes(withName: "//*") { (node, stop) in
+                    if node.name == "startBtn" {
+                        if node.contains(touch.location(in: self)) {
+                            let gameScene = GameScene(size: self.size)
+                            gameScene.scaleMode = self.scaleMode
+                            
+                            let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+                            self.view?.presentScene(gameScene, transition: reveal)
+                        }
+                    }
+                }
+            }
         }
+    
     }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for touch in touches {
+//            let location = touch.location(in: self)
+//            let gameOverScene = GameScene(size: size)
+//            gameOverScene.scaleMode = scaleMode
+//            let transitionType = SKTransition.flipVertical(withDuration: 2.0)
+//            view?.presentScene(gameOverScene,transition: transitionType)
+//
+//        }
+//    }
     
     //    func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
     //        for touch in touches {
