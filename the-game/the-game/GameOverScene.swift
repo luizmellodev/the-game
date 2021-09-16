@@ -32,9 +32,6 @@ class GameOverScene: SKScene {
     //MARK: - didMove
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor.systemBackground
-        
-        backgroundColor = .white
-        
         showTexts()
         
         //Rings calls
