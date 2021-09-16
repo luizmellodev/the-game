@@ -17,7 +17,6 @@
 		38E2CD1926EA7F050097D484 /* the_gameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2CD1826EA7F050097D484 /* the_gameUITests.swift */; };
 		38E2CD2726EA85820097D484 /* StartGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2CD2626EA85820097D484 /* StartGameScene.swift */; };
 		F41FB92826F2BB4D00657E43 /* RingsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41FB92726F2BB4D00657E43 /* RingsClass.swift */; };
-		F41FB93126F2D79E00657E43 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F41FB93026F2D79E00657E43 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		38E2CD1A26EA7F050097D484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38E2CD2626EA85820097D484 /* StartGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameScene.swift; sourceTree = "<group>"; };
 		F41FB92726F2BB4D00657E43 /* RingsClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingsClass.swift; sourceTree = "<group>"; };
-		F41FB93026F2D79E00657E43 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F41FB93126F2D79E00657E43 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +138,6 @@
 		F41FB92F26F2D79E00657E43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F41FB93026F2D79E00657E43 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -456,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.EnzoDegrazia.attackOfTheBlocks;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EnzoDegrazia.Attack-Of-The-Blocks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -476,7 +472,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.EnzoDegrazia.attackOfTheBlocks;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.EnzoDegrazia.Attack-Of-The-Blocks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -489,7 +485,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YM283LC5H4;
+				DEVELOPMENT_TEAM = 8JAU65C453;
 				INFOPLIST_FILE = "the-gameTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -511,7 +507,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YM283LC5H4;
+				DEVELOPMENT_TEAM = 8JAU65C453;
 				INFOPLIST_FILE = "the-gameTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
