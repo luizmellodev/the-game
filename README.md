@@ -48,7 +48,7 @@ This project started as an experiment to explore Apple’s native game developme
 
 | Name               | GitHub                                          |
 |--------------------|--------------------------------------------------|
-| Luiz Eduardo       | [@luizeduardomr](https://github.com/luizmellodev)         |
+| Luiz Eduardo       | [@luizmellodev](https://github.com/luizmellodev)         |
 | Bruno Nepomuceno   | [@brunonepomuceno](https://github.com/brunonepomuceno)     |
 | Enzo De Grazia     | [@enzodegrazia](https://github.com/enzodegrazia)           |
 | Rodrigo Anhaia     | [@RodrigoAnhaia](https://github.com/RodrigoAnhaia)         |
