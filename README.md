@@ -1,113 +1,60 @@
+# 🕹️ The Game
 
-# The Game
+**The Game** is a challenging arcade-style project built with Swift. Your mission? **Protect the central circle from falling squares**. It may sound simple, but as the pace increases, it gets harder and more intense. Precision and quick reflexes are key!
 
-This is the repository of a rather difficult game created in Swift.
+---
 
-# Content
-- [Screenshots](#screenshots)
-- [Badges](#badges)
-- [Run Locally](#run-locally)
-- [Acknowledgements](#acknowledgements)
-- [Authors](#authors)
-- [License](#license)
-- [Feedback](#feedback)
+## 🚀 Technologies Used
 
+This game was built using native Apple technologies:
 
+- 🎮 **SpriteKit** – for 2D rendering and game animations  
+- 📱 **UIKit** – for interface and view management  
+- 🧠 **GameplayKit** – for game logic and smart behaviors
 
+---
 
-## Screenshots
-Calm down!! The game is still being developed. =)
-<!--- 
-<br/><br/>
+## 📦 How to Run Locally
 
-<img alt="game screenshot" src="https://i.imgur.com/0OztvEx.jpg" width="300" height="700"/>
-
-- [Screenshots](#screenshots)
-- [Badges](#badges)
-- [Run Locally](#run-locally)
-- [Acknowledgements](#acknowledgements)
-- [Authors](#authors)
-- [License](#license)
-- [Feedback](#feedback)
-
--->
-
-
-## Badges
-Some project details on badges =)
-
-<!--- 
-Add badges from somewhere like: [shields.io](https://shields.io/)
--->
-
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
-[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
-
-## Run Locally
-
-Clone the project
+1. Clone the repository:
 
 ```bash
-  git clone https://github.com/luizeduardomr/the-game/
+git clone https://github.com/luizmellodev/the-game.git
 ```
 
-Go to the project directory
+2. Navigate into the project folder:
 
 ```bash
-  cd the-game
+cd the-game
 ```
 
-Open the XCode Project (open the .xcworkspace file)
+3. Open the project in Xcode (`.xcworkspace` file):
+
 ```bash
 open the-game.xcworkspace
 ```
 
-Run the project
-```bash
-  And start the simulator =)
-```
+4. Run the project and start the simulator 🚀
 
-- [Screenshots](#screenshots)
-- [Badges](#badges)
-- [Run Locally](#run-locally)
-- [Acknowledgements](#acknowledgements)
-- [Authors](#authors)
-- [License](#license)
-- [Feedback](#feedback)
+---
 
-  
-## Acknowledgements
+## ✨ About the Game
 
- - [Sprite Kit Documentation](https://developer.apple.com/documentation/spritekit/)
- - [Swift Documentation](https://developer.apple.com/documentation/swift/)
-  
-## Authors
+This project started as an experiment to explore Apple’s native game development tools. The mechanics are simple but addictive — your challenge increases the longer you survive. Perfect for testing your reflexes in a minimalist and dynamic environment.
 
-- [@luizeduardomr](https://www.github.com/luizeduardomr)
+---
 
-- [@brunonepomuceno](https://www.github.com/brunonepomuceno)
+## 👨‍💻 Developers
 
-- [@enzodegrazia](https://www.github.com/enzodegrazia)
+| Name               | GitHub                                          |
+|--------------------|--------------------------------------------------|
+| Luiz Eduardo       | [@luizeduardomr](https://github.com/luizmellodev)         |
+| Bruno Nepomuceno   | [@brunonepomuceno](https://github.com/brunonepomuceno)     |
+| Enzo De Grazia     | [@enzodegrazia](https://github.com/enzodegrazia)           |
+| Rodrigo Anhaia     | [@RodrigoAnhaia](https://github.com/RodrigoAnhaia)         |
 
-- [@RodrigoAnhaia](https://www.github.com/RodrigoAnhaia)
+---
 
-## License
+## 📄 License
 
-[MIT](https://choosealicense.com/licenses/mit/)
-
-
-  
-## Feedback
-
-If you have any feedback, please reach out to us at contatos.luizmello@gmail.com
-
-- [Screenshots](#screenshots)
-- [Badges](#badges)
-- [Run Locally](#run-locally)
-- [Acknowledgements](#acknowledgements)
-- [Authors](#authors)
-- [License](#license)
-- [Feedback](#feedback)
-
-  
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
